@@ -7,9 +7,7 @@ export const usePointerLock = () => {
     const uiDispatch = useUiDispatchContext();
 
     const onPointerLock = () => {
-        if (document.pointerLockElement)
-            uiDispatch({ type: UiProdiderActions.TOGGLE_START_SCREEN, payload: false });
-        else
+        if (!document.pointerLockElement)
             uiDispatch({ type: UiProdiderActions.TOGGLE_START_SCREEN, payload: true });
     }
 
