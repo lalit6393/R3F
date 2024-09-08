@@ -66,8 +66,8 @@ const App = () => {
                 />
                 <Stats />
                 <axesHelper args={[10]} position={[0, 0.2, 0]} />
-                {/* <Physics gravity={[0, -9.8, 0]}> */}
-                    <Debug scale={1} color={"white"}>
+                <Physics gravity={[0, -9.8, 0]}>
+                    {/* <Debug scale={1} color={"white"}> */}
                     <ContactMaterialBox />
                     {
                         !startScreenOpen &&
@@ -80,8 +80,8 @@ const App = () => {
                             </Suspense>
                         </>
                     }
-                    </Debug>
-                {/* </Physics> */}
+                    {/* </Debug> */}
+                </Physics>
                 {/* <PerspectiveCamera makeDefault position={[-2, 12, 2]} args={[75, window.innerWidth / window.innerHeight, 0.1, 1000]}/>
                 <OrbitControls target={[0,10.5,0]}/> */}
                 <directionalLight
