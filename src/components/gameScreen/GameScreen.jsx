@@ -24,7 +24,7 @@ const GameScreen = () => {
                 id='gameScreen'
             >
                 <p
-                    className='text-white'
+                    className='text-white relative left-6'
                 >o</p>
             </div>
             {

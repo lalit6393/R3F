@@ -53,6 +53,11 @@ export default function ComplexGround() {
 
     useEffect(() => {
         if (!geometry) return;
+        colorMap.repeat.set(1, 1);
+        normalMap.repeat.set(5, 5);
+        colorMap.generateMipmaps = false;
+
+
         const data = geometry.attributes?.position?.array;
         const temp2 = [...positions];
         bumpData.forEach((vals, index) => {
@@ -92,10 +97,8 @@ export default function ComplexGround() {
             <bufferGeometry {...geometry} attach={"geometry"} />
             <meshStandardMaterial
                 map={colorMap}
-                // roughnessMap={roughnessMap}
                 normalMap={normalMap}
-                roughness={1}  // High roughness for a matte appearance
-                metalness={0}    // No metallic reflection
+                metalness={0.1}  // Low metallic reflection
             />
         </mesh>
     )

@@ -1,5 +1,5 @@
 import { Debug, Physics, useBox, useContactMaterial } from '@react-three/cannon';
-import { Sky, Stats } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera, Sky, Stats } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber'
 import './App.css'
 import { Suspense } from 'react';
@@ -66,8 +66,8 @@ const App = () => {
                 />
                 <Stats />
                 <axesHelper args={[10]} position={[0, 0.2, 0]} />
-                <Physics gravity={[0, -9.8, 0]}>
-                    {/* <Debug scale={1} color={"white"}> */}
+                {/* <Physics gravity={[0, -9.8, 0]}> */}
+                    <Debug scale={1} color={"white"}>
                     <ContactMaterialBox />
                     {
                         !startScreenOpen &&
@@ -80,10 +80,10 @@ const App = () => {
                             </Suspense>
                         </>
                     }
-                    {/* </Debug> */}
-                </Physics>
-                {/* <PerspectiveCamera makeDefault position={[-60, 20, 0]} /> */}
-                {/* <OrbitControls /> */}
+                    </Debug>
+                {/* </Physics> */}
+                {/* <PerspectiveCamera makeDefault position={[-2, 12, 2]} args={[75, window.innerWidth / window.innerHeight, 0.1, 1000]}/>
+                <OrbitControls target={[0,10.5,0]}/> */}
                 <directionalLight
                     intensity={5}
                     castShadow
